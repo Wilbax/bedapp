@@ -1,35 +1,35 @@
-WindowManager@ScreenManager:
-    MainScreen:
-    SecondScreen:
+WindowManager:
+    LoadingScreen:
+    UserTypeScreen:
 
 
-<MainScreen>:
-    name: "main"
-    BoxLayout:
+<LoadingScreen>:
+    name: "loadingS"
+    MDBoxLayout:
         orientation: "vertical"
         size: root.width, root.height
 
-        Label:
+        MDLabel:
             text: "first screen"
             font_size:32
 
-        Button:
+        MDRoundFlatIconButton:
             text: "next screen"
             font_size: 32
-            on_release: root.current = "second"
+            on_press: root.current = "userTypeS"
 
 
-<SecondScreen>:
-    name: "second"
-    BoxLayout:
+<UserTypeScreen>:
+    name: "userTypeS"
+    MDBoxLayout:
         orientation: "vertical"
         size: root.width, root.height
 
-        Label:
+        MDLabel:
             text: "first screen"
             font_size:32
 
-        Button:
+        MDRoundFlatIconButton:
             text: "Go back"
             font_size: 32
-            on_release:root.current = "main"
+            on_press:root.current = "LoadingS"

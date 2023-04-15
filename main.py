@@ -1,28 +1,28 @@
-from kivy.app import App
+from kivymd.app import MDApp
 from kivy.lang import Builder
-from kivy.uix.label import Label
-from kivy.uix.screenmanager import Screen, ScreenManager
+from kivymd.uix.label import MDLabel
+from kivymd.uix.screenmanager import MDScreenManager
+from kivymd.uix.screen import MDScreen
 
 
-class MainScreen(Screen):
+class LoadingScreen(MDScreen):
     pass
 
 
-class SecondScreen(Screen):
+class UserTypeScreen(MDScreen):
     pass
 
 
-class WindowManager(ScreenManager):
+class WindowManager(MDScreenManager):
     pass
 
 
-kv = Builder.load_file("bedx.kv")
+class mainApp(MDApp):
 
-
-class bedApp(App):
     def build(self):
+        kv = Builder.load_file("Interfaces/Main/loadingScreen.kv")
         return kv
 
 
 if __name__ == "__main__":
-    bedApp().run()
+    mainApp().run()
