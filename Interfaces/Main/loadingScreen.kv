@@ -1,35 +1,28 @@
-WindowManager:
+SManager:
+    OpeningScreen:
     LoadingScreen:
     UserTypeScreen:
 
 
+<OpeningScreen>:
+    md_bg_color: app.theme_cls.primary_color
+    name: "openingScreen"
+    FitImage:
+        size_hint: None, None
+        size:300, 300
+        pos_hint: {'center_x':.5, 'center_y': .5}
+        source: "Assets/Images/logo.png"
+
 <LoadingScreen>:
-    name: "loadingS"
-    MDBoxLayout:
-        orientation: "vertical"
-        size: root.width, root.height
-
-        MDLabel:
-            text: "first screen"
-            font_size:32
-
-        MDRoundFlatIconButton:
-            text: "next screen"
-            font_size: 32
-            on_press: root.current = "userTypeS"
-
-
+    name: "loadingScreen"
+#    md_bg_color: app.theme_cls.primary_color
+    MDSpinner:
+        size_hint: None, None
+        size: dp(46), dp(46)
+        pos_hint: {'center_x':.5, 'center_y': .5}
+        active: True
 <UserTypeScreen>:
-    name: "userTypeS"
-    MDBoxLayout:
-        orientation: "vertical"
-        size: root.width, root.height
-
-        MDLabel:
-            text: "first screen"
-            font_size:32
-
-        MDRoundFlatIconButton:
-            text: "Go back"
-            font_size: 32
-            on_press:root.current = "LoadingS"
+    name:"userTypeScreen"
+    md_bg_color: [1,0,0,1]
+    MDLabel:
+        text: "gg"
